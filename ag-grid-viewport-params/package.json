@@ -9,8 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@ag-grid-community/client-side-row-model": "~28.2.1",
     "@ag-grid-community/core": "~28.2.1",
     "@ag-grid-community/csv-export": "^28.2.1",
@@ -20,12 +18,15 @@
     "@ag-grid-enterprise/core": "~28.2.1",
     "@ag-grid-enterprise/excel-export": "^28.2.1",
     "@ag-grid-enterprise/menu": "~28.2.1",
-    "@ag-grid-enterprise/viewport-row-model": "~28.2.1"
+    "@ag-grid-enterprise/viewport-row-model": "~28.2.1",
+    "react": "~17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
+    "@types/react": "~17.0.3",
+    "@types/react-dom": "~17.0.2",
     "@vitejs/plugin-react-swc": "^3.0.0",
+    "sass": "^1.62.0",
     "typescript": "^4.9.3",
     "vite": "^4.2.0"
   }
