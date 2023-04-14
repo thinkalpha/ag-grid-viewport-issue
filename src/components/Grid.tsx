@@ -5,7 +5,7 @@ import {
   IViewportDatasourceParams,
 } from "@ag-grid-community/core";
 import { AgGridReact, AgGridReactProps } from "@ag-grid-community/react";
-import { useRef, useMemo, useEffect, useCallback } from "react";
+import { useRef, useMemo, useCallback } from "react";
 
 function delay(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -15,8 +15,9 @@ const ColDefs: ColDef[] = [
   {
     colId: "itemId",
     headerName: "Item ID",
+    field: "itemId",
   },
-  { colId: "price", headerName: "Price" },
+  { colId: "price", headerName: "Price", field: "price" },
 ];
 
 interface Entry {
@@ -28,7 +29,6 @@ class MockServer {
   private data: Entry[] = [];
   private lowerBound = 0;
   private upperBound = 10;
-  private interval?: number;
   private listener?: (entry: Entry, rowId: number) => void;
 
   constructor() {
@@ -122,7 +122,7 @@ export const DemoGrid = ({ rowHeight }: AgGridReactProps) => {
   return (
     <div className="ag-theme-balham-dark" style={{ height: 600 }}>
       <AgGridReact
-        //key={rowHeight}
+        key={rowHeight}
         rowModelType="viewport"
         viewportDatasource={viewport}
         viewportRowModelBufferSize={10}
